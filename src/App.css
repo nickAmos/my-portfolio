@@ -11,8 +11,18 @@
   justify-content: center;
 }
 
+#AboutME-Container {
+  width: 1200px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: white 2px solid;
+}
+
 #test-text {
-  padding-top: 400px;
+  width: 900px;
+  text-align: justify;
 }
 
 #test-text p {
@@ -27,9 +37,23 @@
   font-size: 38px;
   color: rgb(216, 237, 243);
 }
+#test-text h2 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: rgb(216, 237, 243);
+}
+
+#img-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  border: white 1px solid;
+}
 
 .progress-bar {
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
