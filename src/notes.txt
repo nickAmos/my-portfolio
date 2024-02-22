@@ -1,0 +1,9 @@
+TEXT ON GROUND:
+
+use a function to input the height of the container the text will rise from
+ie:
+    y: () => document.querySelector(".className").offsetHeight
+
+- This will allow for the text to always be on the ground desipite the screen
+  size. Just ensure that the conainer that holds this animation touches the bottom
+  of the screen. 
