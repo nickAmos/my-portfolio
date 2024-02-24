@@ -7,3 +7,8 @@ ie:
 - This will allow for the text to always be on the ground desipite the screen
   size. Just ensure that the conainer that holds this animation touches the bottom
   of the screen. 
+
+- Create a new div that has 100vh which is basically the screen for the first
+  animation. Another div will go inside which has is placed on the bottom of the screen
+  by flex-end on the first screen. this will ensure we can put the text on the bottom.
+   
