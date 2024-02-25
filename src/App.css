@@ -22,11 +22,11 @@
 
 #AboutME-Container {
   width: 1200px;
-  height: 60vh;
+  height: 50%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  border: white 2px solid;
+  /*border: white 2px solid; */
 }
 
 #test-text {
@@ -47,15 +47,18 @@
   font-size: 38px;
   color: rgb(216, 237, 243);
 }
-#test-text h2 {
-  font-family: "Outfit", sans-serif;
-  font-weight: 700;
-  font-size: 30px;
+#img-container h2 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 200;
+  padding-left: 20px;
+  font-size: 28px;
+  position: absolute;
   color: rgb(216, 237, 243);
 }
 
 #img-container {
   width: 200px;
+  position: relative;
   height: 200px;
   border-radius: 5px;
   border: white 1px solid;

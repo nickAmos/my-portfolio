@@ -20,25 +20,82 @@ function App() {
         start: "center center",
         end: "+=1000",
         scrub: true,
-        markers: true,
-        pin: true
+        //markers: true,
+        pin: true,
+ 
+      }
+    })
+
+    let fontTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".test",
+        start: "bottom center",
+        end: "+=500",
+        scrub: true,
+        markers: true
       }
     })
 
     tl.to(".aboutME",{
     x: 0});   
 
-    gsap.from(".test", {
+
+    fontTL.to(".javaScript", {
+      color: "#f7df1e",
+      borderBottom: "1px solid #f7df1e" 
+        })
+
+    
+        fontTL.to(".react", {
+          color: "#61DBFB",
+          borderBottom: "1px solid #61DBFB" 
+            })
+
+            fontTL.to(".contact", {
+              y: -50
+            })
+
+     gsap.from(".image", {
       scrollTrigger: {
-        trigger: '.test',
+        trigger: '.aboutME',
         start: 'top center',
-        end: '+=600',
+        end: '+=300',
         scrub: 1,
         markers: true
       },
-      opacity: 0,
-      x: 200
+      x: () => - document.querySelector(".aboutME").offsetWidth + 210,
+      y: () => document.querySelector(".aboutME").offsetHeight -290,
+      scale: 0.5
     })
+
+    gsap.from(".p", {
+      scrollTrigger: {
+        trigger: '.aboutME',
+        start: 'top center',
+        end: '+=300',
+        scrub: 1,
+        markers: true
+      },
+      x: () => - document.querySelector(".aboutME").offsetWidth / 8,
+      y: () => document.querySelector(".aboutME").offsetHeight /4 + 20 ,
+      rotate: 17,
+      scale: 0.5
+    })
+
+    gsap.from(".h1", {
+      scrollTrigger: {
+        trigger: '.aboutME',
+        start: 'top center',
+        end: '+=300',
+        scrub: 1,
+        markers: true
+      },
+      x: () =>  document.querySelector(".aboutME").offsetWidth / 3,
+      y: () => document.querySelector(".aboutME").offsetHeight/1.56,
+      rotate: 13,
+      scale: 1
+    })
+    
 
   });
   
@@ -55,16 +112,16 @@ function App() {
 
       <div className='aboutME' id='AboutME-Container'>
         <div className='test' id='test-text'>
-         <h1>Hi, my name is Nick !</h1>
-         <p>I'm a <span>JavaScript</span> / <span>React</span> developer who enjoys making interactive sites for the web.
+         <h1 className='h1'>Hi, my name is Nick !</h1>
+         <p className='p'>I'm a <span className='javaScript'>JavaScript</span> / <span className='react'>React</span> developer who enjoys making interactive sites for the web.
           I started learning to code in October 2022 with Codecademy's frontend-engineer course. 
            Currently, I work as a laboratory assistant in a pathology lab. For fun I enjoy bloudering 
            and playing sports with friends. 
          </p>
-         <h2>Contact me</h2>
+         
         </div>
-        <div id='img-container'>
-
+        <div className='image' id='img-container'>
+          <h2 className='contact'>Contact me</h2>
         </div>
         </div>
 
