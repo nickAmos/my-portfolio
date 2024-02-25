@@ -12,3 +12,9 @@ ie:
   animation. Another div will go inside which has is placed on the bottom of the screen
   by flex-end on the first screen. this will ensure we can put the text on the bottom.
    
+
+  
+  26th agenda :
+    Refactor intro text: 
+      - animation on javascript/react text
+      - adjust text and fonts for contact.
