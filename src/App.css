@@ -61,7 +61,43 @@
   position: relative;
   height: 200px;
   border-radius: 5px;
-  border: white 1px solid;
+
+}
+
+#img-container img {
+  width: 100%;
+  border-radius: 7.5px;
+  aspect-ratio: 1 / 1;
+}
+
+#boulder-txt {
+  position: relative;
+}
+#boulder-emoji {
+  position: absolute;
+  left: 40%;
+  bottom: -30px;
+  opacity: 0;
+  font-size: 30px;
+  transform: rotate(90deg);
+}
+
+#laboratory-txt {
+  position: relative;
+}
+#laboratory-emoji {
+  position: absolute;
+  left: 40%;
+  bottom: -30px;
+  opacity: 0;
+  font-size: 30px;
+}
+#skills-txt {
+  position: absolute;
+  left: 60%;
+  width: 300px;
+  bottom: -100px;
+  font-size: 30px;
 }
 
 .progress-bar {
