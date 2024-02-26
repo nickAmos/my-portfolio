@@ -5,6 +5,9 @@ import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import { Icon } from 'semantic-ui-react';
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -12,6 +15,14 @@ function App() {
   const { scrollYProgress } = useScroll();
 
   useGSAP(() => {
+
+    gsap.from(".TopIconGithub", {
+      x: -300,
+      y: -90,
+      rotate: -900,
+      duration:3,
+      ease: "bounce.out"
+    })
 
     let tl = gsap.timeline({
       scrollTrigger: {
@@ -25,6 +36,14 @@ function App() {
       }
     })
 
+    let iconTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".aboutME",
+        start: "top center",
+        end: "+=100",
+        scrub: true}
+    })
+
     let fontTL = gsap.timeline({
       scrollTrigger: {
         trigger: ".test",
@@ -34,6 +53,23 @@ function App() {
         markers: true
       }
     })
+    
+    iconTL.to('.TopIconGithub',{
+    opacity: 0,
+  y: 100}
+    )
+    iconTL.to('.TopIconLinkedin',{
+      opacity: 0
+ ,   y: 100}
+      )
+      iconTL.to('.TopIconMail',{
+        opacity: 0
+   ,   y: 100}
+        )
+        iconTL.to('.TopIconX',{
+          opacity: 0
+     ,   y: 100}
+          )
 
     tl.to(".aboutME",{
     x: 0});   
@@ -88,10 +124,10 @@ function App() {
         scrub: 1,
         markers: true
       },
-      x: () => - document.querySelector(".aboutME").offsetWidth / 8,
-      y: () => document.querySelector(".aboutME").offsetHeight /4 + 20 ,
-      rotate: 17,
-      scale: 0.5
+      x: () => - document.querySelector(".aboutME").offsetWidth / 7.5,
+      y: () => document.querySelector(".aboutME").offsetHeight /4 + 13 ,
+      rotate: 16.6,
+      scale: 0.48
     })
 
     gsap.from(".h1", {
@@ -103,8 +139,8 @@ function App() {
         markers: true
       },
       x: () =>  document.querySelector(".aboutME").offsetWidth / 3,
-      y: () => document.querySelector(".aboutME").offsetHeight/1.56,
-      rotate: 13,
+      y: () => document.querySelector(".aboutME").offsetHeight/1.52,
+      rotate: 11,
       scale: 1
     })
     
@@ -127,19 +163,38 @@ function App() {
          <h1 className='h1'>Hi, my name is Nick !</h1>
          <p className='p'>I'm a <span className='javaScript'>JavaScript</span> / <span className='react'>React</span> developer who enjoys making interactive sites for the web.
           I began my coding journey in October 2022 with Codecademy's frontend-engineer course. 
-           Currently, I work as a laboratory assistant in a pathology <span id='laboratory-txt'>laboratory <span className='laboratory' id='laboratory-emoji'>🧪</span><span id='skills-txt'>My skills</span></span>and for fun I enjoy <span id='boulder-txt'>bouldering <span id='boulder-emoji' className='boulder'>🧗‍♂️</span></span> 
+           Currently, I work as a laboratory assistant in a pathology laboratory and for fun I enjoy <span id='boulder-txt'>bouldering <span id='boulder-emoji' className='boulder'>🧗‍♂️</span></span> 
           with friends. 
          </p>
          
         </div>
         <div className='image' id='img-container'>
-          <h2 className='contact'>Contact me</h2>
-          <img src={memoji} alt='brandlogo'/>  
+          
+          <img src={memoji} alt='memoji'/>  
           
         </div>
+            <Icon id="broken-Mail" className='TopIconMail' inverted color='grey' name='mail' size='big'/>
+            <Icon id="broken-Github" className='TopIconGithub' inverted color='grey' name='github' size='big'/>
+            <Icon id="broken-Linkedin" className='TopIconLinkedin' inverted color='grey' name='linkedin' size='big'/>
+            <Icon id="broken-X" className='TopIconX' inverted color='grey' name='mail' size='big'/>
         </div>
 
       </div>
+      
+      <div id='About-Me-Pin-End'>
+
+        </div>
+
+        <div id='contact-bar-screen'>
+
+          <div id='contact-icon-holder'>
+            <Icon className='IconMail' name='mail' size='big'/>
+            <Icon className='IconGithub' name='github' size='big'/>
+            <Icon className='IconLinkedin' name='linkedin' size='big'/>
+            <Icon className='IconX' name='mail' size='big'/>
+          </div>
+
+        </div>
 
 
      
