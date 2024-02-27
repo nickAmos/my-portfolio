@@ -108,16 +108,25 @@
 #contact-bar-screen {
   width: 100%;
   height: 300px;
-  background-color: #01182f;
+  background-color: #173f67;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#contact-icon-holder {
+#contact-reveal {
   width: 400px;
-  height: 60px;
-  background-color: #c9c9c9;
+  height: 120px;
+  position: relative;
+}
+
+#contact-icon-holder {
+  width: 100%;
+  height: 50%;
+  background-color: rgb(216, 237, 243);
+  border-radius: 5px;
+  margin-bottom: 50px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -144,6 +153,52 @@
   transform: rotate(-17deg);
 }
 
+#getMail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+#clipboardContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: hotpink;
+}
+
+#relative-container {
+  position: relative;
+}
+#square {
+  position: absolute;
+  transform: rotate(45deg);
+  height: 20px;
+  width: 20px;
+  left: 27.5%;
+  top: -10.5px;
+  background-color: hotpink;
+}
+
+#email-flex {
+  width: 100%;
+  height: 100%;
+  display: flex ;
+  align-items: center;
+  justify-content: space-evenly ;
+}
+
+#email {
+  padding-top: 10px;
+  z-index: 1;
+}
+
 
 .progress-bar {
   position: fixed;
@@ -154,4 +209,9 @@
   height: 10px;
   background: hotpink;
   transform-origin: 0%;
+}
+
+#spacer {
+  height: 200vh;
+  width: 100%;
 }

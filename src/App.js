@@ -6,13 +6,24 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { Icon } from 'semantic-ui-react';
+import { useState } from 'react';
 
 
 gsap.registerPlugin(ScrollTrigger);
 
+
+
 function App() {
 
   const { scrollYProgress } = useScroll();
+  const [clipboard, setClipboard] = useState(false);
+
+  function getEmail() {
+    let copyEmail = document.getElementById('email').innerHTML;
+    console.log(copyEmail);
+    navigator.clipboard.writeText(copyEmail);
+  }
+
 
   useGSAP(() => {
 
@@ -143,6 +154,25 @@ function App() {
       rotate: 11,
       scale: 1
     })
+
+    let contactTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".contactHolder",
+        start: "-350 center",
+        end: "+=250",
+        scrub: true,
+        markers: true
+      }
+    })
+
+    contactTL.from(".contactHolder", {
+      opacity: 0
+    })
+
+    contactTL.from(".IconReal", {
+      y: -75,
+      stagger: 0.1
+    })
     
 
   });
@@ -187,12 +217,40 @@ function App() {
 
         <div id='contact-bar-screen'>
 
-          <div id='contact-icon-holder'>
-            <Icon className='IconMail' name='mail' size='big'/>
-            <Icon className='IconGithub' name='github' size='big'/>
-            <Icon className='IconLinkedin' name='linkedin' size='big'/>
-            <Icon className='IconX' name='mail' size='big'/>
+        <div id='contact-reveal'>
+
+        {clipboard ? 
+        <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} onClick={() => {
+          setTimeout(() => {
+            getEmail()
+            setClipboard(!clipboard)
+          },250)
+        }} id='clipboardContainer'>
+          <div id='relative-container'>
+          <div id='square'></div>
+          <div id='email-flex'>
+            <p id='email'>nick.amos2000@gmail.com</p>
+            <Icon name='copy outline'/>
           </div>
+          
+          </div>
+        </motion.div>
+         : null }
+
+              <div className='contactHolder' id='contact-icon-holder'>
+              <div onClick={() => setClipboard(!clipboard)} id='getMail'>
+                <Icon className='IconReal Mail' name='mail' size='big'/>
+              </div>
+                <div><Icon className='IconReal Github' name='github' size='big'/></div>
+                <div><Icon className='IconReal Linkedin' name='linkedin' size='big'/></div>
+                <div><Icon className='IconReal X' name='mail' size='big'/></div>
+              </div>
+
+          </div>
+
+        </div>
+
+        <div id='spacer'>
 
         </div>
 
