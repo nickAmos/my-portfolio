@@ -158,6 +158,7 @@
   align-items: center;
   justify-content: center;
   width: auto;
+  cursor: pointer;
   height: auto;
   position: relative;
 }
@@ -166,11 +167,11 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 200px;
+  width: 220px;
   height: 40px;
   cursor: pointer;
   border-radius: 5px;
-  background-color: hotpink;
+  background-color: white;
 }
 
 #relative-container {
@@ -183,7 +184,31 @@
   width: 20px;
   left: 27.5%;
   top: -10.5px;
-  background-color: hotpink;
+  background-color: white;
+}
+
+#copied-txt {
+  position: absolute;
+  display: flex;
+  font-size: larger;
+  align-items: center;
+  justify-content: center;
+  bottom: 0px;
+  left: 0;
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+}
+
+a, a:hover {
+  cursor: pointer;
+  color: black;
+}
+
+#copy-outline {
+  padding-bottom: 5px;
 }
 
 #email-flex {
@@ -211,7 +236,41 @@
   transform-origin: 0%;
 }
 
-#spacer {
+#mySkillsScreen {
   height: 200vh;
   width: 100%;
+}
+
+#hundredvhvw {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pinned-skills-screen {
+  width: 1200px;
+  height: 700px;
+ 
+}
+
+#my-skills-txt {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#my-skills-txt h1 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+#map-technologoes {
+  width: 100%;
+  height: 90%;
+  background-color: white;
 }

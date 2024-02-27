@@ -17,6 +17,7 @@ function App() {
 
   const { scrollYProgress } = useScroll();
   const [clipboard, setClipboard] = useState(false);
+  const [copied, setcopied] = useState(false);
 
   function getEmail() {
     let copyEmail = document.getElementById('email').innerHTML;
@@ -61,8 +62,23 @@ function App() {
         start: "bottom center",
         end: "+=750",
         scrub: true,
+        //markers: true
+      }
+    })
+
+    let skillsTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".pinned-skills-screen",
+        start: "center center",
+        end: "+=1000",
+        scrub: true,
+        pin: true,
         markers: true
       }
+    })
+
+    skillsTL.to(".pinned-skills-screen", {
+      x: 0
     })
     
     iconTL.to('.TopIconGithub',{
@@ -120,7 +136,7 @@ function App() {
         start: 'top center',
         end: '+=300',
         scrub: 1,
-        markers: true
+        //markers: true
       },
       x: () => - document.querySelector(".aboutME").offsetWidth + 210,
       y: () => document.querySelector(".aboutME").offsetHeight -290,
@@ -133,7 +149,7 @@ function App() {
         start: 'top center',
         end: '+=300',
         scrub: 1,
-        markers: true
+       // markers: true
       },
       x: () => - document.querySelector(".aboutME").offsetWidth / 7.5,
       y: () => document.querySelector(".aboutME").offsetHeight /4 + 13 ,
@@ -147,7 +163,7 @@ function App() {
         start: 'top center',
         end: '+=300',
         scrub: 1,
-        markers: true
+       // markers: true
       },
       x: () =>  document.querySelector(".aboutME").offsetWidth / 3,
       y: () => document.querySelector(".aboutME").offsetHeight/1.52,
@@ -161,7 +177,7 @@ function App() {
         start: "-350 center",
         end: "+=250",
         scrub: true,
-        markers: true
+       // markers: true
       }
     })
 
@@ -224,25 +240,30 @@ function App() {
           setTimeout(() => {
             getEmail()
             setClipboard(!clipboard)
-          },250)
+            setcopied(true);
+          },250);
+          setTimeout(() => {
+            setcopied(false);
+          }, 1250);
         }} id='clipboardContainer'>
           <div id='relative-container'>
           <div id='square'></div>
           <div id='email-flex'>
             <p id='email'>nick.amos2000@gmail.com</p>
-            <Icon name='copy outline'/>
+            <div id='copy-outline'><Icon name='copy outline'/></div>
           </div>
           
           </div>
         </motion.div>
-         : null }
+         : null}
+         {copied ? <div id='copied-txt'>Copied!</div> : null} 
 
               <div className='contactHolder' id='contact-icon-holder'>
               <div onClick={() => setClipboard(!clipboard)} id='getMail'>
                 <Icon className='IconReal Mail' name='mail' size='big'/>
               </div>
-                <div><Icon className='IconReal Github' name='github' size='big'/></div>
-                <div><Icon className='IconReal Linkedin' name='linkedin' size='big'/></div>
+                <div><a href='https://github.com/nickAmos?tab=overview&from=2024-02-01&to=2024-02-28' target='_blank'><Icon className='IconReal Github' name='github' size='big'/></a></div>
+                <div><a href='https://www.linkedin.com/in/nick-amos-2a2688247/' target='_blank'><Icon className='IconReal Linkedin' name='linkedin' size='big'/></a></div>
                 <div><Icon className='IconReal X' name='mail' size='big'/></div>
               </div>
 
@@ -250,7 +271,17 @@ function App() {
 
         </div>
 
-        <div id='spacer'>
+        <div id='mySkillsScreen'>
+          <div id='hundredvhvw'>
+
+              <div id='pinned-skills-screen' className='pinned-skills-screen'>
+                <div id='my-skills-txt'>
+                  <h1>my skills</h1>
+                  </div>
+                <div id='map-technologoes'></div>
+
+              </div>
+          </div>
 
         </div>
 
