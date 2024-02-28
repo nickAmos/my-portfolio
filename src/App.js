@@ -1,5 +1,13 @@
 import './App.css';
 import memoji from '../src/memoji.jpg';
+import HTML from '../src/Images/HTML.png';
+import CSS from '../src/Images/CSS3.png';
+import BOOTSTRAP from '../src/Images/bootstrap.png';
+import FRAMERMOTION from '../src/Images/framer-motion.png';
+import GSAP from '../src/Images/GSAP.svg';
+import JAVASCRIPT from '../src/Images/JavaScript-logo.png';
+import REACT from '../src/Images/react.png';
+import SEMANTIC from '../src/Images/semantic-ui.png';
 import { motion, useScroll} from "framer-motion";
 import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
@@ -18,12 +26,93 @@ function App() {
   const { scrollYProgress } = useScroll();
   const [clipboard, setClipboard] = useState(false);
   const [copied, setcopied] = useState(false);
+  const [Html, setHtml] = useState(false);
+  const [Css, setCss] = useState(false);
+  const [JavaScript, setJavaScript] = useState(false);
+  const [Reacttxt, setReacttxt] = useState(false);
+  const [Gsap, setGsap] = useState(false);
+  const [FramerMotion, setFramerMotion] = useState(false);
+  const [Bootstrap, setBootstrap] = useState(false);
+  const [Semantic, setSemantic] = useState(false);
 
   function getEmail() {
     let copyEmail = document.getElementById('email').innerHTML;
     console.log(copyEmail);
     navigator.clipboard.writeText(copyEmail);
   }
+
+  let HTMLtxt = document.getElementById('HTML');
+  if (HTMLtxt) {
+  HTMLtxt.addEventListener("mouseenter", () => {
+    setHtml(true);
+    });
+  HTMLtxt.addEventListener("mouseleave", () => {
+    setHtml(false);
+      });
+};
+let CSStxt = document.getElementById('CSS');
+  if (CSStxt) {
+  CSStxt.addEventListener("mouseenter", () => {
+    setCss(true);
+    });
+  CSStxt.addEventListener("mouseleave", () => {
+    setCss(false);
+      });
+};
+let JavaScripttxt = document.getElementById('JAVASCRIPT');
+  if (JavaScripttxt) {
+  JavaScripttxt.addEventListener("mouseenter", () => {
+    setJavaScript(true);
+    });
+  JavaScripttxt.addEventListener("mouseleave", () => {
+    setJavaScript(false);
+      });
+};
+let REACTtxt = document.getElementById('REACT');
+  if (REACTtxt) {
+  REACTtxt.addEventListener("mouseenter", () => {
+    setReacttxt(true);
+    });
+  REACTtxt.addEventListener("mouseleave", () => {
+    setReacttxt(false);
+      });
+};
+let GSAPtxt = document.getElementById('GSAP');
+  if (GSAPtxt) {
+  GSAPtxt.addEventListener("mouseenter", () => {
+    setGsap(true);
+    });
+  GSAPtxt.addEventListener("mouseleave", () => {
+    setGsap(false);
+      });
+};
+let FRAMERtxt = document.getElementById('FRAMERMOTION');
+  if (FRAMERtxt) {
+  FRAMERtxt.addEventListener("mouseenter", () => {
+    setFramerMotion(true);
+    });
+  FRAMERtxt.addEventListener("mouseleave", () => {
+    setFramerMotion(false);
+      });
+};
+let BOOTSTRAPtxt = document.getElementById('BOOTSTRAP');
+  if (BOOTSTRAPtxt) {
+  BOOTSTRAPtxt.addEventListener("mouseenter", () => {
+    setBootstrap(true);
+    });
+  BOOTSTRAPtxt.addEventListener("mouseleave", () => {
+    setBootstrap(false);
+      });
+};
+let SEMANTICtxt = document.getElementById('SEMANTIC');
+  if (SEMANTICtxt) {
+  SEMANTICtxt.addEventListener("mouseenter", () => {
+    setSemantic(true);
+    });
+  SEMANTICtxt.addEventListener("mouseleave", () => {
+    setSemantic(false);
+      });
+};
 
 
   useGSAP(() => {
@@ -278,7 +367,43 @@ function App() {
                 <div id='my-skills-txt'>
                   <h1>my skills</h1>
                   </div>
-                <div id='map-technologoes'></div>
+                <div id='map-technologoes'>
+                  <div id='language-txt'>
+                    <h3>Languages / Frameworks</h3>
+                  </div>
+                  <div id='languages-container'>
+                    <div id='img-container-tech'><img id='HTML' src={HTML} />
+                    {Html ? <div id='absoluteName'><p>myName</p></div> : null}
+                    </div>
+                    <div id='img-container-tech'><img id='CSS' src={CSS} />
+                    {Css ? <div id='absoluteName'><p>myName</p></div> : null}
+                    </div>
+                    <div id='img-container-tech'><img id='JAVASCRIPT' src={JAVASCRIPT} />
+                    {JavaScript ? <div id='absoluteName'><p>myName</p></div> : null}
+                    </div>
+                    <div id='img-container-tech'><img id='REACT' src={REACT} />
+                    {Reacttxt ? <div id='absoluteName'><p>myName</p></div> : null}
+                    </div>
+                  </div>
+
+                  <div id='library-txt'>
+                    <h3>Libraries </h3>
+                  </div>
+                  <div id='library-container'>
+                    <div id='img-container-tech'><img id='GSAP' src={GSAP} />
+                    {Gsap ? <div id='absoluteName'><p>myName</p></div> : null}
+                    </div>
+                    <div id='img-container-tech'><img id='FRAMERMOTION' src={FRAMERMOTION} />
+                    {FramerMotion ? <div id='absoluteName'><p>myName</p></div> : null}
+                    </div>
+                    <div id='img-container-tech'><img id='BOOTSTRAP' src={BOOTSTRAP} />
+                    {Bootstrap ? <div id='absoluteName'><p>myName</p></div> : null}
+                    </div>
+                    <div id='img-container-tech'><img id='SEMANTIC' src={SEMANTIC} />
+                    {Semantic ? <div id='absoluteName'><p>myName</p></div> : null}
+                    </div>
+                  </div>
+                </div>
 
               </div>
           </div>
