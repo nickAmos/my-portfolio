@@ -42,6 +42,7 @@ function App() {
   }
 
   let HTMLtxt = document.getElementById('HTML');
+setTimeout(() => {
   if (HTMLtxt) {
   HTMLtxt.addEventListener("mouseenter", () => {
     setHtml(true);
@@ -49,8 +50,9 @@ function App() {
   HTMLtxt.addEventListener("mouseleave", () => {
     setHtml(false);
       });
-};
+}; }, 500 );
 let CSStxt = document.getElementById('CSS');
+setTimeout(() => {
   if (CSStxt) {
   CSStxt.addEventListener("mouseenter", () => {
     setCss(true);
@@ -58,8 +60,9 @@ let CSStxt = document.getElementById('CSS');
   CSStxt.addEventListener("mouseleave", () => {
     setCss(false);
       });
-};
+}; }, 500 );
 let JavaScripttxt = document.getElementById('JAVASCRIPT');
+setTimeout(() => {
   if (JavaScripttxt) {
   JavaScripttxt.addEventListener("mouseenter", () => {
     setJavaScript(true);
@@ -67,8 +70,9 @@ let JavaScripttxt = document.getElementById('JAVASCRIPT');
   JavaScripttxt.addEventListener("mouseleave", () => {
     setJavaScript(false);
       });
-};
+}; }, 500 );
 let REACTtxt = document.getElementById('REACT');
+setTimeout(() => {
   if (REACTtxt) {
   REACTtxt.addEventListener("mouseenter", () => {
     setReacttxt(true);
@@ -76,8 +80,9 @@ let REACTtxt = document.getElementById('REACT');
   REACTtxt.addEventListener("mouseleave", () => {
     setReacttxt(false);
       });
-};
+}; }, 500 );
 let GSAPtxt = document.getElementById('GSAP');
+setTimeout(() => {
   if (GSAPtxt) {
   GSAPtxt.addEventListener("mouseenter", () => {
     setGsap(true);
@@ -85,8 +90,9 @@ let GSAPtxt = document.getElementById('GSAP');
   GSAPtxt.addEventListener("mouseleave", () => {
     setGsap(false);
       });
-};
+}; }, 500 );
 let FRAMERtxt = document.getElementById('FRAMERMOTION');
+setTimeout(() => {
   if (FRAMERtxt) {
   FRAMERtxt.addEventListener("mouseenter", () => {
     setFramerMotion(true);
@@ -94,8 +100,9 @@ let FRAMERtxt = document.getElementById('FRAMERMOTION');
   FRAMERtxt.addEventListener("mouseleave", () => {
     setFramerMotion(false);
       });
-};
+}; }, 500 );
 let BOOTSTRAPtxt = document.getElementById('BOOTSTRAP');
+setTimeout(() => {
   if (BOOTSTRAPtxt) {
   BOOTSTRAPtxt.addEventListener("mouseenter", () => {
     setBootstrap(true);
@@ -103,8 +110,9 @@ let BOOTSTRAPtxt = document.getElementById('BOOTSTRAP');
   BOOTSTRAPtxt.addEventListener("mouseleave", () => {
     setBootstrap(false);
       });
-};
+}; }, 500 );
 let SEMANTICtxt = document.getElementById('SEMANTIC');
+setTimeout(() => {
   if (SEMANTICtxt) {
   SEMANTICtxt.addEventListener("mouseenter", () => {
     setSemantic(true);
@@ -112,7 +120,7 @@ let SEMANTICtxt = document.getElementById('SEMANTIC');
   SEMANTICtxt.addEventListener("mouseleave", () => {
     setSemantic(false);
       });
-};
+}; }, 500 );
 
 
   useGSAP(() => {
@@ -365,43 +373,44 @@ let SEMANTICtxt = document.getElementById('SEMANTIC');
 
               <div id='pinned-skills-screen' className='pinned-skills-screen'>
                 <div id='my-skills-txt'>
-                  <h1>my skills</h1>
+                  <h1>My Technologies</h1>
                   </div>
                 <div id='map-technologoes'>
                   <div id='language-txt'>
                     <h3>Languages / Frameworks</h3>
                   </div>
                   <div id='languages-container'>
-                    <div id='img-container-tech'><img id='HTML' src={HTML} />
-                    {Html ? <div id='absoluteName'><p>myName</p></div> : null}
-                    </div>
-                    <div id='img-container-tech'><img id='CSS' src={CSS} />
-                    {Css ? <div id='absoluteName'><p>myName</p></div> : null}
-                    </div>
-                    <div id='img-container-tech'><img id='JAVASCRIPT' src={JAVASCRIPT} />
-                    {JavaScript ? <div id='absoluteName'><p>myName</p></div> : null}
-                    </div>
-                    <div id='img-container-tech'><img id='REACT' src={REACT} />
-                    {Reacttxt ? <div id='absoluteName'><p>myName</p></div> : null}
-                    </div>
+                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics' target='_blank'><img id='HTML' src={HTML} /></a>
+                    {Html ? <div id='absoluteName'><p>HTML</p></div> : null}
+                    </motion.div>
+                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://developer.mozilla.org/en-US/docs/Web/CSS' target='_blank'><img id='CSS' src={CSS} /></a>
+                    {Css ? <div id='absoluteName'><p>CSS</p></div> : null}
+                    </motion.div>
+                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics' target='_blank'><img id='JAVASCRIPT' src={JAVASCRIPT} /></a>
+                    {JavaScript ? <div id='absoluteName'><p>JavaScript</p></div> : null}
+                    </motion.div>
+                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://create-react-app.dev/' target='_blank'><img id='REACT' src={REACT} /></a>
+                    {Reacttxt ? <div id='absoluteName'><p>React</p></div> : null}
+                    </motion.div>
                   </div>
 
                   <div id='library-txt'>
-                    <h3>Libraries </h3>
+                    <h3>Libraries</h3>
                   </div>
                   <div id='library-container'>
-                    <div id='img-container-tech'><img id='GSAP' src={GSAP} />
-                    {Gsap ? <div id='absoluteName'><p>myName</p></div> : null}
-                    </div>
-                    <div id='img-container-tech'><img id='FRAMERMOTION' src={FRAMERMOTION} />
-                    {FramerMotion ? <div id='absoluteName'><p>myName</p></div> : null}
-                    </div>
-                    <div id='img-container-tech'><img id='BOOTSTRAP' src={BOOTSTRAP} />
-                    {Bootstrap ? <div id='absoluteName'><p>myName</p></div> : null}
-                    </div>
-                    <div id='img-container-tech'><img id='SEMANTIC' src={SEMANTIC} />
-                    {Semantic ? <div id='absoluteName'><p>myName</p></div> : null}
-                    </div>
+                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }}
+                     id='img-container-tech'><a href='https://gsap.com/' target='_blank'><img id='GSAP' src={GSAP} /></a>
+                    {Gsap ? <div id='absoluteName'><p>GSAP</p></div> : null}
+                    </motion.div>
+                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://www.framer.com/motion/' target='_blank'><img id='FRAMERMOTION' src={FRAMERMOTION} /></a>
+                    {FramerMotion ? <div id='absoluteName'><p>Framer Motion</p></div> : null}
+                    </motion.div>
+                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://getbootstrap.com/' target='_blank'><img id='BOOTSTRAP' src={BOOTSTRAP} /></a>
+                    {Bootstrap ? <div id='absoluteName'><p>Bootstrap</p></div> : null}
+                    </motion.div>
+                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://react.semantic-ui.com/' target='_blank'><img id='SEMANTIC' src={SEMANTIC} /></a>
+                    {Semantic ? <div id='absoluteName'><p>Semantic UI</p></div> : null}
+                    </motion.div>
                   </div>
                 </div>
 
