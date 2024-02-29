@@ -277,6 +277,7 @@ a, a:hover {
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
+  border-radius: 7.5px;
 }
 
 #languages-container, #library-container {
