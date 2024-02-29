@@ -251,7 +251,7 @@ a, a:hover {
 
 #pinned-skills-screen {
   width: 1200px;
-  height: 700px;
+  height: 600px;
  
 }
 
@@ -273,6 +273,7 @@ a, a:hover {
   width: 100%;
   height: 90%;
   background-color: rgb(254, 254, 254);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -298,7 +299,7 @@ a, a:hover {
 #absoluteName {
   position: absolute;
   bottom: -40px;
-  background-color: rgb(255, 240, 247);
+  background-color: rgb(43, 43, 43);
   border-radius: 5px;
   width: 125px;
   height: auto;
@@ -311,6 +312,7 @@ a, a:hover {
   font-family: "Quicksand", sans-serif;
   font-weight: 300;
   font-size: 18px;
+  color: white;
 }
 
 #language-txt, #library-txt {

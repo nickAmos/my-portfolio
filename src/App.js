@@ -12,7 +12,7 @@ import { motion, useScroll} from "framer-motion";
 import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import Techstack from './Components/Techstack';
 import { Icon } from 'semantic-ui-react';
 import { useState } from 'react';
 
@@ -26,14 +26,8 @@ function App() {
   const { scrollYProgress } = useScroll();
   const [clipboard, setClipboard] = useState(false);
   const [copied, setcopied] = useState(false);
-  const [Html, setHtml] = useState(false);
-  const [Css, setCss] = useState(false);
-  const [JavaScript, setJavaScript] = useState(false);
-  const [Reacttxt, setReacttxt] = useState(false);
-  const [Gsap, setGsap] = useState(false);
-  const [FramerMotion, setFramerMotion] = useState(false);
-  const [Bootstrap, setBootstrap] = useState(false);
-  const [Semantic, setSemantic] = useState(false);
+
+
 
   function getEmail() {
     let copyEmail = document.getElementById('email').innerHTML;
@@ -41,86 +35,6 @@ function App() {
     navigator.clipboard.writeText(copyEmail);
   }
 
-  let HTMLtxt = document.getElementById('HTML');
-setTimeout(() => {
-  if (HTMLtxt) {
-  HTMLtxt.addEventListener("mouseenter", () => {
-    setHtml(true);
-    });
-  HTMLtxt.addEventListener("mouseleave", () => {
-    setHtml(false);
-      });
-}; }, 500 );
-let CSStxt = document.getElementById('CSS');
-setTimeout(() => {
-  if (CSStxt) {
-  CSStxt.addEventListener("mouseenter", () => {
-    setCss(true);
-    });
-  CSStxt.addEventListener("mouseleave", () => {
-    setCss(false);
-      });
-}; }, 500 );
-let JavaScripttxt = document.getElementById('JAVASCRIPT');
-setTimeout(() => {
-  if (JavaScripttxt) {
-  JavaScripttxt.addEventListener("mouseenter", () => {
-    setJavaScript(true);
-    });
-  JavaScripttxt.addEventListener("mouseleave", () => {
-    setJavaScript(false);
-      });
-}; }, 500 );
-let REACTtxt = document.getElementById('REACT');
-setTimeout(() => {
-  if (REACTtxt) {
-  REACTtxt.addEventListener("mouseenter", () => {
-    setReacttxt(true);
-    });
-  REACTtxt.addEventListener("mouseleave", () => {
-    setReacttxt(false);
-      });
-}; }, 500 );
-let GSAPtxt = document.getElementById('GSAP');
-setTimeout(() => {
-  if (GSAPtxt) {
-  GSAPtxt.addEventListener("mouseenter", () => {
-    setGsap(true);
-    });
-  GSAPtxt.addEventListener("mouseleave", () => {
-    setGsap(false);
-      });
-}; }, 500 );
-let FRAMERtxt = document.getElementById('FRAMERMOTION');
-setTimeout(() => {
-  if (FRAMERtxt) {
-  FRAMERtxt.addEventListener("mouseenter", () => {
-    setFramerMotion(true);
-    });
-  FRAMERtxt.addEventListener("mouseleave", () => {
-    setFramerMotion(false);
-      });
-}; }, 500 );
-let BOOTSTRAPtxt = document.getElementById('BOOTSTRAP');
-setTimeout(() => {
-  if (BOOTSTRAPtxt) {
-  BOOTSTRAPtxt.addEventListener("mouseenter", () => {
-    setBootstrap(true);
-    });
-  BOOTSTRAPtxt.addEventListener("mouseleave", () => {
-    setBootstrap(false);
-      });
-}; }, 500 );
-let SEMANTICtxt = document.getElementById('SEMANTIC');
-setTimeout(() => {
-  if (SEMANTICtxt) {
-  SEMANTICtxt.addEventListener("mouseenter", () => {
-    setSemantic(true);
-    });
-  SEMANTICtxt.addEventListener("mouseleave", () => {
-    setSemantic(false);
-      });
-}; }, 500 );
 
 
   useGSAP(() => {
@@ -163,21 +77,6 @@ setTimeout(() => {
       }
     })
 
-    let skillsTL = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".pinned-skills-screen",
-        start: "center center",
-        end: "+=1000",
-        scrub: true,
-        pin: true,
-        markers: true
-      }
-    })
-
-    skillsTL.to(".pinned-skills-screen", {
-      x: 0
-    })
-    
     iconTL.to('.TopIconGithub',{
     opacity: 0,
   y: 100}
@@ -367,56 +266,9 @@ setTimeout(() => {
           </div>
 
         </div>
+        <div>
 
-        <div id='mySkillsScreen'>
-          <div id='hundredvhvw'>
-
-              <div id='pinned-skills-screen' className='pinned-skills-screen'>
-                <div id='my-skills-txt'>
-                  <h1>My Technologies</h1>
-                  </div>
-                <div id='map-technologoes'>
-                  <div id='language-txt'>
-                    <h3>Languages / Frameworks</h3>
-                  </div>
-                  <div id='languages-container'>
-                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics' target='_blank'><img id='HTML' src={HTML} /></a>
-                    {Html ? <div id='absoluteName'><p>HTML</p></div> : null}
-                    </motion.div>
-                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://developer.mozilla.org/en-US/docs/Web/CSS' target='_blank'><img id='CSS' src={CSS} /></a>
-                    {Css ? <div id='absoluteName'><p>CSS</p></div> : null}
-                    </motion.div>
-                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics' target='_blank'><img id='JAVASCRIPT' src={JAVASCRIPT} /></a>
-                    {JavaScript ? <div id='absoluteName'><p>JavaScript</p></div> : null}
-                    </motion.div>
-                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://create-react-app.dev/' target='_blank'><img id='REACT' src={REACT} /></a>
-                    {Reacttxt ? <div id='absoluteName'><p>React</p></div> : null}
-                    </motion.div>
-                  </div>
-
-                  <div id='library-txt'>
-                    <h3>Libraries</h3>
-                  </div>
-                  <div id='library-container'>
-                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }}
-                     id='img-container-tech'><a href='https://gsap.com/' target='_blank'><img id='GSAP' src={GSAP} /></a>
-                    {Gsap ? <div id='absoluteName'><p>GSAP</p></div> : null}
-                    </motion.div>
-                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://www.framer.com/motion/' target='_blank'><img id='FRAMERMOTION' src={FRAMERMOTION} /></a>
-                    {FramerMotion ? <div id='absoluteName'><p>Framer Motion</p></div> : null}
-                    </motion.div>
-                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://getbootstrap.com/' target='_blank'><img id='BOOTSTRAP' src={BOOTSTRAP} /></a>
-                    {Bootstrap ? <div id='absoluteName'><p>Bootstrap</p></div> : null}
-                    </motion.div>
-                    <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} id='img-container-tech'><a href='https://react.semantic-ui.com/' target='_blank'><img id='SEMANTIC' src={SEMANTIC} /></a>
-                    {Semantic ? <div id='absoluteName'><p>Semantic UI</p></div> : null}
-                    </motion.div>
-                  </div>
-                </div>
-
-              </div>
-          </div>
-
+        <Techstack />
         </div>
 
 
