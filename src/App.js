@@ -15,6 +15,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Techstack from './Components/Techstack';
 import { Icon } from 'semantic-ui-react';
 import { useState } from 'react';
+import Projects from './Components/Projects';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -269,6 +270,11 @@ function App() {
         <div>
 
         <Techstack />
+        </div>
+
+
+        <div>
+          <Projects />
         </div>
 
 

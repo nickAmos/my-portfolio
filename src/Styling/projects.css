@@ -1,0 +1,28 @@
+#projects-screen {
+    height: 150vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#project-list-container {
+    min-height: 100vh;
+    max-height: 200vh;
+    width: 1200px;
+    
+}
+
+#project-bar {
+    width: 100%;
+    height: 150px;
+    background-color: white;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+
+#more-info {
+    height: 150px;
+    background-color: aliceblue;
+}

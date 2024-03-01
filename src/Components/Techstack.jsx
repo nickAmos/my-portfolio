@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { motion, useScroll} from "framer-motion";
 import HTML from '../Images/HTML.png';
 import CSS from '../Images/CSS3.png';
-import BOOTSTRAP from '../Images/bootstrap.png';
+import BOOTSTRAP from '../Images/axios.png';
 import FRAMERMOTION from '../Images/framer-motion.png';
 import GSAP from '../Images/GSAP.svg';
 import JAVASCRIPT from '../Images/JavaScript-logo.png';
@@ -26,6 +26,18 @@ export default function Techstack() {
 
 
     useGSAP(() => {
+
+    gsap.from(".my-skills-txt", {
+        scrollTrigger: {
+            trigger: ".my-skills-txt",
+            start: "top center",
+            end: "bottom center",
+            scrub:true,
+            markers: true
+        },
+        y: 60,
+        opacity: 0
+    })
      
     gsap.to(".pinned-skills-screen", {
         scrollTrigger: {
@@ -49,7 +61,7 @@ export default function Techstack() {
                 start: "top center",
                 end: "+=1000",
                 scrub: true,
-                markers: true
+        
             },
             height:0,
         })
@@ -164,7 +176,7 @@ export default function Techstack() {
         <div id='hundredvhvw'>
 
             <div id='pinned-skills-screen' className='pinned-skills-screen'>
-              <div id='my-skills-txt'>
+              <div id='my-skills-txt' className="my-skills-txt">
                 <h1>My Technologies</h1>
                 </div>
               <div id='map-technologoes' className='map-technologoes'>
@@ -193,8 +205,8 @@ export default function Techstack() {
                   <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} className="img-container-tech" id='img-container-tech'><a href='https://www.framer.com/motion/' target='_blank'><img id='FRAMERMOTION' src={FRAMERMOTION} /></a>
                   {FramerMotion ? <div id='absoluteName'><p>Framer Motion</p></div> : null}
                   </motion.div>
-                  <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} className="img-container-tech" id='img-container-tech'><a href='https://getbootstrap.com/' target='_blank'><img id='BOOTSTRAP' src={BOOTSTRAP} /></a>
-                  {Bootstrap ? <div id='absoluteName'><p>Bootstrap</p></div> : null}
+                  <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} className="img-container-tech" id='img-container-tech'><a href='https://axios-http.com/docs/intro' target='_blank'><img id='BOOTSTRAP' src={BOOTSTRAP} /></a>
+                  {Bootstrap ? <div id='absoluteName'><p>Axios</p></div> : null}
                   </motion.div>
                   <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} className="img-container-tech" id='img-container-tech'><a href='https://react.semantic-ui.com/' target='_blank'><img id='SEMANTIC' src={SEMANTIC} /></a>
                   {Semantic ? <div id='absoluteName'><p>Semantic UI</p></div> : null}
