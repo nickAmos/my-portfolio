@@ -11,6 +11,7 @@
     min-height: 100vh;
     max-height: 200vh;
     width: 1200px;
+    overflow: hidden;
     
 }
 
@@ -27,6 +28,24 @@
 
 #handleClick {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#plus-container, #minus-container {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid grey;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+#minus-container {
+    font-size: 40px;
 }
 
 #project-heading, #project-keys, #project-button-container {

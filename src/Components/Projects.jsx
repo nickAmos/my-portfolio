@@ -17,11 +17,63 @@ export default function Projects() {
     const [Dp4, setDelayP4] = useState(false);
 
     useGSAP(() => {
+        gsap.from(".project-bar-1", {
+            scrollTrigger: {
+                trigger: ".project-bar-1",
+                start: "bottom bottom"
+            },
+            x: -300,
+            ease: 'expo.out',
+            duration: 2,
+            opacity:0
+        })
+
+        gsap.from(".project-bar-2", {
+            scrollTrigger: {
+                trigger: ".project-bar-2",
+                start: "bottom bottom"
+            },
+            x: -300,
+            ease: 'expo.out',
+            duration: 2
+        })
+        gsap.from(".project-bar-3", {
+            scrollTrigger: {
+                trigger: ".project-bar-3",
+                start: "bottom bottom"
+            },
+            x: -300,
+            ease: 'expo.out',
+            duration: 2
+        })
+        gsap.from(".project-bar-4", {
+            scrollTrigger: {
+                trigger: ".project-bar-4",
+                start: "bottom bottom"
+            },
+            x: -300,
+            ease: 'expo.out',
+            duration: 2
+        })
+    })
+
+    useGSAP(() => {
         gsap.from(".more-info-1", {
             height: 0,
             duration: 0.5,
             ease: 'expo.out'
         })
+        gsap.from(".plus-minus-1", {
+            rotate: 90,
+            opacity: 0
+        })
+
+        setTimeout(() => {
+            gsap.to(".plus-minus-1", {
+                rotate:0,
+                opacity:100
+            })
+        }, 200)
     }, [p1]);
 
     useGSAP(() => {
@@ -30,6 +82,8 @@ export default function Projects() {
             duration: 0.5,
             ease: 'expo.out'
         })
+
+
     }, [Dp1]);
 
     const handleP1 = () => {
@@ -51,6 +105,18 @@ export default function Projects() {
             duration: 0.5,
             ease: 'expo.out'
         })
+
+        gsap.from(".plus-minus-2", {
+            rotate: 90,
+            opacity: 0
+        })
+
+        setTimeout(() => {
+            gsap.to(".plus-minus-2", {
+                rotate:0,
+                opacity:100
+            })
+        }, 200)
     }, [p2]);
 
     useGSAP(() => {
@@ -59,6 +125,8 @@ export default function Projects() {
             duration: 0.5,
             ease: 'expo.out'
         })
+
+      
     }, [Dp2]);
 
     const handleP2 = () => {
@@ -80,6 +148,19 @@ export default function Projects() {
             duration: 0.5,
             ease: 'expo.out'
         })
+
+        gsap.from(".plus-minus-3", {
+            rotate: 90,
+            opacity: 0
+        })
+
+        setTimeout(() => {
+            gsap.to(".plus-minus-3", {
+                rotate:0,
+                opacity:100
+            })
+        }, 200)
+
     }, [p3]);
 
     useGSAP(() => {
@@ -109,6 +190,18 @@ export default function Projects() {
             duration: 0.5,
             ease: 'expo.out'
         })
+
+        gsap.from(".plus-minus-4", {
+            rotate: 90,
+            opacity: 0
+        })
+
+        setTimeout(() => {
+            gsap.to(".plus-minus-4", {
+                rotate:0,
+                opacity:100
+            })
+        }, 200)
     }, [p4]);
 
     useGSAP(() => {
@@ -136,7 +229,7 @@ export default function Projects() {
         <>
         <div id="projects-screen">
             <div id="project-list-container">
-                <div id="project-bar">
+                <div id="project-bar" className='project-bar-1'>
                     <div id='project-heading'>
                         <h3>Project heading</h3>
                     </div>
@@ -145,12 +238,12 @@ export default function Projects() {
                     </div>
                     <div id='project-button-container'>
                         <div id='handleClick' onClick={() => handleP1()}>
-                        {p1 ? <Icon flipped='vertically'  size='big' name='caret square down outline'/> : <Icon size='big'name='caret square down outline' />}
+                        {p1 ? <div id='minus-container'><p className='plus-minus-1'>-</p></div> : <div id='plus-container'><p className='plus-minus-1'>+</p></div>}
                         </div>
                     </div>
                     </div>
                     {p1 ? <div className='more-info-1' id='more-info'>More info</div> : null}
-                <div id="project-bar">
+                <div id="project-bar" className='project-bar-2'>
                     <div id='project-heading'>
                         <h3>Project heading</h3>
                     </div>
@@ -159,12 +252,12 @@ export default function Projects() {
                     </div>
                     <div id='project-button-container'>
                         <div id='handleClick' onClick={() => handleP2()}>
-                            {p2 ? <Icon flipped='vertically'  size='big' name='caret square down outline'/> : <Icon size='big'name='caret square down outline' />}
+                            {p2 ? <div id='minus-container'><p className='plus-minus-2'>-</p></div> : <div id='plus-container'><p className='plus-minus-2'>+</p></div>}
                         </div>
                     </div>
                     </div>
                     {p2 ? <div className='more-info-2' id='more-info'>More info</div> : null}
-                <div id="project-bar">
+                <div id="project-bar" className='project-bar-3'>
                     <div id='project-heading'>
                         <h3>Project heading</h3>
                     </div>
@@ -173,12 +266,12 @@ export default function Projects() {
                     </div>
                     <div id='project-button-container'>
                         <div id='handleClick' onClick={() => handleP3()}>
-                        {p3 ? <Icon flipped='vertically'  size='big' name='caret square down outline'/> : <Icon size='big'name='caret square down outline' />}
+                        {p3 ? <div id='minus-container'><p className='plus-minus-3'>-</p></div> : <div id='plus-container'><p className='plus-minus-3'>+</p></div>}
                         </div>
                     </div>
                     </div>
                     {p3 ? <div className='more-info-3' id='more-info'>More info</div> : null}
-                <div id="project-bar">
+                <div id="project-bar" className='project-bar-4'>
                     <div id='project-heading'>
                         <h3>Project heading</h3>
                     </div>
@@ -187,7 +280,7 @@ export default function Projects() {
                     </div>
                     <div id='project-button-container'>
                         <div id='handleClick' onClick={() => handleP4()}>
-                            {p4 ? <Icon  flipped='vertically'  size='big' name='caret square down outline'/> : <Icon size='big'name='caret square down outline' />}
+                            {p4 ? <div id='minus-container'><p className='plus-minus-4'>-</p></div> : <div id='plus-container'><p className='plus-minus-4'>+</p></div>}
                         </div>
                     </div>
                     </div>
