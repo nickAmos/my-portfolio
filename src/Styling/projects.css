@@ -20,9 +20,39 @@
     background-color: white;
     border: 2px solid black;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+
+#handleClick {
+    cursor: pointer;
+}
+
+#project-heading, #project-keys, #project-button-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#project-heading {
+    flex: 1 0 35%;
+    background-color: greenyellow;
+}
+
+#project-keys {
+    flex: 1 0 40%;
+    background-color: salmon;
+}
+
+#project-button-container {
+    flex: 1 0 20%;
+    background-color: olivedrab;
 }
 
 #more-info {
     height: 150px;
     background-color: aliceblue;
 }
+

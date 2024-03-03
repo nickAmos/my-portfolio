@@ -1,13 +1,5 @@
 import './App.css';
 import memoji from '../src/memoji.jpg';
-import HTML from '../src/Images/HTML.png';
-import CSS from '../src/Images/CSS3.png';
-import BOOTSTRAP from '../src/Images/bootstrap.png';
-import FRAMERMOTION from '../src/Images/framer-motion.png';
-import GSAP from '../src/Images/GSAP.svg';
-import JAVASCRIPT from '../src/Images/JavaScript-logo.png';
-import REACT from '../src/Images/react.png';
-import SEMANTIC from '../src/Images/semantic-ui.png';
 import { motion, useScroll} from "framer-motion";
 import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
