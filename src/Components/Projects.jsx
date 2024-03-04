@@ -16,6 +16,17 @@ export default function Projects() {
     const [p4, setP4] = useState(false);
     const [Dp4, setDelayP4] = useState(false);
 
+    const [sourceOne, setSourceOne] = useState(false);
+
+    let sourceCodeOne = document.getElementById('source-code');
+
+    if (sourceCodeOne) {
+        sourceCodeOne.addEventListener("mouseenter", () => {
+            setSourceOne(!sourceOne);
+            console.log("ran")
+        })
+    }
+ 
     useGSAP(() => {
         gsap.from(".project-bar-1", {
             scrollTrigger: {
@@ -234,7 +245,7 @@ export default function Projects() {
                         <h3>Shoe Store</h3>
                     </div>
                     <div id='project-keys'>
-                        <p>minimalist design | react router navigation | mapping complex children</p>
+                        <p>React router navigation | Mapping complex children</p>
                     </div>
                     <div id='project-button-container'>
                         <div id='handleClick' onClick={() => handleP1()}>
@@ -243,14 +254,22 @@ export default function Projects() {
                     </div>
                     </div>
                     {p1 ? <div className='more-info-1' id='more-info'>
-                    {`A Shoe Store with focus on positive user experience through satisfying page navigation. Keep track of items in the cart throughout all pages, filter by both price and type of running shoe. Checkout page allows for editing of the cart just prior to purchase to avoid page hopping which is present in many exisiting shoe stores.`}  
+                        <div id='more-info-txt'>
+                    {`A Shoe Store with focus on positive user experience through satisfying page navigation. Keep track of items in the cart throughout all pages, filter by both price and type of running shoe. Checkout page allows for editing of the cart just prior to purchase to avoid page hopping which is present in many exisiting shoe stores.`}
+                    </div>
+                        <div id='navigation-container'>
+                            <div id='project-img'></div>
+                            <div id='source-code'>
+                                <Icon name='code' size='large' />
+                            </div>
+                        </div>  
                     </div> : null}
                 <div id="project-bar" className='project-bar-2'>
                     <div id='project-heading'>
                         <h3>Test Directory </h3>
                     </div>
                     <div id='project-keys'>
-                        <p>internal API | large dataset filtering | Dynamic components</p>
+                        <p>Internal API | Large dataset filtering </p>
                     </div>
                     <div id='project-button-container'>
                         <div id='handleClick' onClick={() => handleP2()}>
@@ -259,14 +278,20 @@ export default function Projects() {
                     </div>
                     </div>
                     {p2 ? <div className='more-info-2' id='more-info'>
+                        <div id='more-info-txt'>
                         {`An updated version of Austin Healths Test Directory that utilises react to display 1000+ individual pathology tests with only one dynamic page. Smart search bar filters through tests based on full scientific name, common alternative names and the LIS (laboratory Information System) test code.`} 
+                        </div>
+                        <div id='navigation-container'>
+                            <div id='project-img'></div>
+                            <div id='source-code'></div>
+                        </div>
                     </div> : null}
                 <div id="project-bar" className='project-bar-3'>
                     <div id='project-heading'>
                         <h3>Pokemon Game</h3>
                     </div>
                     <div id='project-keys'>
-                        <p>RESTful API | AXIOS data fetching | theme controls</p>
+                        <p>RESTful API | AXIOS data fetching</p>
                     </div>
                     <div id='project-button-container'>
                         <div id='handleClick' onClick={() => handleP3()}>
@@ -275,14 +300,20 @@ export default function Projects() {
                     </div>
                     </div>
                     {p3 ? <div className='more-info-3' id='more-info'>
+                        <div id='more-info-txt'>
                         {`Guess which of the three generated Pokemon know the prompted learned move. Repeated API fetching handled by AXIOS paired with styled loading state ensures enjoyable flow to the game. Change the theme of all pages through the toggle found in the home page. `}
+                        </div>
+                        <div id='navigation-container'>
+                            <div id='project-img'></div>
+                            <div id='source-code'></div>
+                        </div>
                     </div> : null}
                 <div id="project-bar" className='project-bar-4'>
                     <div id='project-heading'>
                         <h3>Task Manager </h3>
                     </div>
                     <div id='project-keys'>
-                        <p>React DnD | local storage </p>
+                        <p>React DnD | Local storage </p>
                     </div>
                     <div id='project-button-container'>
                         <div id='handleClick' onClick={() => handleP4()}>
@@ -291,7 +322,13 @@ export default function Projects() {
                     </div>
                     </div>
                     {p4 ? <div className='more-info-4' id='more-info'>
+                        <div id='more-info-txt'>
                         {`Organise tasks based on their urgency / frequency using react beautiful drag and drop. This library allows for created task cards to be moved around the screen and rendered differently depending on the container they are dropped in.`}
+                        </div>
+                        <div id='navigation-container'>
+                            <div id='project-img'></div>
+                            <div id='source-code'></div>
+                        </div>
                     </div> : null}
             </div>
         </div>
