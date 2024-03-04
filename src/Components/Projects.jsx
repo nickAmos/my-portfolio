@@ -231,10 +231,10 @@ export default function Projects() {
             <div id="project-list-container">
                 <div id="project-bar" className='project-bar-1'>
                     <div id='project-heading'>
-                        <h3>Project heading</h3>
+                        <h3>Shoe Store</h3>
                     </div>
                     <div id='project-keys'>
-                        <p>things | the projects | does</p>
+                        <p>minimalist design | react router navigation | mapping complex children</p>
                     </div>
                     <div id='project-button-container'>
                         <div id='handleClick' onClick={() => handleP1()}>
@@ -242,13 +242,15 @@ export default function Projects() {
                         </div>
                     </div>
                     </div>
-                    {p1 ? <div className='more-info-1' id='more-info'>More info</div> : null}
+                    {p1 ? <div className='more-info-1' id='more-info'>
+                    {`A Shoe Store with focus on positive user experience through satisfying page navigation. Keep track of items in the cart throughout all pages, filter by both price and type of running shoe. Checkout page allows for editing of the cart just prior to purchase to avoid page hopping which is present in many exisiting shoe stores.`}  
+                    </div> : null}
                 <div id="project-bar" className='project-bar-2'>
                     <div id='project-heading'>
-                        <h3>Project heading</h3>
+                        <h3>Test Directory </h3>
                     </div>
                     <div id='project-keys'>
-                        <p>things | the projects | does</p>
+                        <p>internal API | large dataset filtering | Dynamic components</p>
                     </div>
                     <div id='project-button-container'>
                         <div id='handleClick' onClick={() => handleP2()}>
@@ -256,13 +258,15 @@ export default function Projects() {
                         </div>
                     </div>
                     </div>
-                    {p2 ? <div className='more-info-2' id='more-info'>More info</div> : null}
+                    {p2 ? <div className='more-info-2' id='more-info'>
+                        {`An updated version of Austin Healths Test Directory that utilises react to display 1000+ individual pathology tests with only one dynamic page. Smart search bar filters through tests based on full scientific name, common alternative names and the LIS (laboratory Information System) test code.`} 
+                    </div> : null}
                 <div id="project-bar" className='project-bar-3'>
                     <div id='project-heading'>
-                        <h3>Project heading</h3>
+                        <h3>Pokemon Game</h3>
                     </div>
                     <div id='project-keys'>
-                        <p>things | the projects | does</p>
+                        <p>RESTful API | AXIOS data fetching | theme controls</p>
                     </div>
                     <div id='project-button-container'>
                         <div id='handleClick' onClick={() => handleP3()}>
@@ -270,13 +274,15 @@ export default function Projects() {
                         </div>
                     </div>
                     </div>
-                    {p3 ? <div className='more-info-3' id='more-info'>More info</div> : null}
+                    {p3 ? <div className='more-info-3' id='more-info'>
+                        {`Guess which of the three generated Pokemon know the prompted learned move. Repeated API fetching handled by AXIOS paired with styled loading state ensures enjoyable flow to the game. Change the theme of all pages through the toggle found in the home page. `}
+                    </div> : null}
                 <div id="project-bar" className='project-bar-4'>
                     <div id='project-heading'>
-                        <h3>Project heading</h3>
+                        <h3>Task Manager </h3>
                     </div>
                     <div id='project-keys'>
-                        <p>things | the projects | does</p>
+                        <p>React DnD | local storage </p>
                     </div>
                     <div id='project-button-container'>
                         <div id='handleClick' onClick={() => handleP4()}>
@@ -284,7 +290,9 @@ export default function Projects() {
                         </div>
                     </div>
                     </div>
-                    {p4 ? <div className='more-info-4' id='more-info'>More info</div> : null}
+                    {p4 ? <div className='more-info-4' id='more-info'>
+                        {`Organise tasks based on their urgency / frequency using react beautiful drag and drop. This library allows for created task cards to be moved around the screen and rendered differently depending on the container they are dropped in.`}
+                    </div> : null}
             </div>
         </div>
         </>
