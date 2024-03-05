@@ -3,6 +3,10 @@ import '../Styling/projects.css';
 import { gsap } from "gsap";
 import { useState } from 'react';
 import { useGSAP } from '@gsap/react';
+import testDirectory from '../Images/TestDirectory.png';
+import pokeStreak from '../Images/PokeStreak.png';
+import shoeStore from '../Images/ShoeStore.png';
+import taskManager from '../Images/TaskManager.png';
 
 
 export default function Projects() { 
@@ -18,15 +22,6 @@ export default function Projects() {
 
     const [sourceOne, setSourceOne] = useState(false);
 
-    let sourceCodeOne = document.getElementById('source-code');
-
-    if (sourceCodeOne) {
-        sourceCodeOne.addEventListener("mouseenter", () => {
-            setSourceOne(!sourceOne);
-            console.log("ran")
-        })
-    }
- 
     useGSAP(() => {
         gsap.from(".project-bar-1", {
             scrollTrigger: {
@@ -65,6 +60,18 @@ export default function Projects() {
             x: -300,
             ease: 'expo.out',
             duration: 2
+        })
+
+        gsap.from(".projects-title", {
+            scrollTrigger: {
+                trigger: ".projects-title",
+                start: "center bottom",
+                end: "+=200",
+                scrub: true,
+                markers: true
+            },
+            y: 60,
+        opacity: 0
         })
     })
 
@@ -239,6 +246,9 @@ export default function Projects() {
     return(
         <>
         <div id="projects-screen">
+            <div id='projects-title'className='projects-title'>
+                <h1>My Projects</h1>
+            </div>
             <div id="project-list-container">
                 <div id="project-bar" className='project-bar-1'>
                     <div id='project-heading'>
@@ -258,8 +268,14 @@ export default function Projects() {
                     {`A Shoe Store with focus on positive user experience through satisfying page navigation. Keep track of items in the cart throughout all pages, filter by both price and type of running shoe. Checkout page allows for editing of the cart just prior to purchase to avoid page hopping which is present in many exisiting shoe stores.`}
                     </div>
                         <div id='navigation-container'>
-                            <div id='project-img'></div>
+                            <div id='project-img-container'>
+                                <div id='overlay'>
+                                   <p>View Site</p>
+                                </div>
+                                <img src={shoeStore}/>
+                            </div>
                             <div id='source-code'>
+                                <p>Code</p>
                                 <Icon name='code' size='large' />
                             </div>
                         </div>  
@@ -282,9 +298,17 @@ export default function Projects() {
                         {`An updated version of Austin Healths Test Directory that utilises react to display 1000+ individual pathology tests with only one dynamic page. Smart search bar filters through tests based on full scientific name, common alternative names and the LIS (laboratory Information System) test code.`} 
                         </div>
                         <div id='navigation-container'>
-                            <div id='project-img'></div>
-                            <div id='source-code'></div>
-                        </div>
+                            <div id='project-img-container'>
+                                <div id='overlay'>
+                                   <p>View Site</p>
+                                </div>
+                                <img src={testDirectory}/>
+                            </div>
+                            <div id='source-code'>
+                                <p>Code</p>
+                                <Icon name='code' size='large' />
+                            </div>
+                        </div> 
                     </div> : null}
                 <div id="project-bar" className='project-bar-3'>
                     <div id='project-heading'>
@@ -304,9 +328,17 @@ export default function Projects() {
                         {`Guess which of the three generated Pokemon know the prompted learned move. Repeated API fetching handled by AXIOS paired with styled loading state ensures enjoyable flow to the game. Change the theme of all pages through the toggle found in the home page. `}
                         </div>
                         <div id='navigation-container'>
-                            <div id='project-img'></div>
-                            <div id='source-code'></div>
-                        </div>
+                            <div id='project-img-container'>
+                                <div id='overlay'>
+                                   <p>View Site</p>
+                                </div>
+                                <img src={pokeStreak}/>
+                            </div>
+                            <div id='source-code'>
+                                <p>Code</p>
+                                <Icon name='code' size='large' />
+                            </div>
+                        </div> 
                     </div> : null}
                 <div id="project-bar" className='project-bar-4'>
                     <div id='project-heading'>
@@ -323,12 +355,20 @@ export default function Projects() {
                     </div>
                     {p4 ? <div className='more-info-4' id='more-info'>
                         <div id='more-info-txt'>
-                        {`Organise tasks based on their urgency / frequency using react beautiful drag and drop. This library allows for created task cards to be moved around the screen and rendered differently depending on the container they are dropped in.`}
+                        {`Organise tasks based on their urgency / frequency using React Drag and Drop. This library allows for created task cards to be moved around the screen and rendered differently depending on the container they are dropped in.`}
                         </div>
                         <div id='navigation-container'>
-                            <div id='project-img'></div>
-                            <div id='source-code'></div>
-                        </div>
+                            <div id='project-img-container'>
+                                <div id='overlay'>
+                                   <p>View Site</p>
+                                </div>
+                                <img src={taskManager}/>
+                            </div>
+                            <div id='source-code'>
+                                <p>Code</p>
+                                <Icon name='code' size='large' />
+                            </div>
+                        </div> 
                     </div> : null}
             </div>
         </div>

@@ -1,4 +1,4 @@
-import './App.css';
+import '../src/Styling/App.css';
 import memoji from '../src/memoji.jpg';
 import { motion, useScroll} from "framer-motion";
 import { gsap } from "gsap";
@@ -8,6 +8,7 @@ import Techstack from './Components/Techstack';
 import { Icon } from 'semantic-ui-react';
 import { useState } from 'react';
 import Projects from './Components/Projects';
+import Contact from './Components/Contact';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -17,28 +18,68 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
 
   const { scrollYProgress } = useScroll();
-  const [clipboard, setClipboard] = useState(false);
-  const [copied, setcopied] = useState(false);
-
-
-
-  function getEmail() {
-    let copyEmail = document.getElementById('email').innerHTML;
-    console.log(copyEmail);
-    navigator.clipboard.writeText(copyEmail);
-  }
-
-
 
   useGSAP(() => {
 
-    gsap.from(".TopIconGithub", {
-      x: -300,
-      y: -90,
-      rotate: -900,
-      duration:3,
-      ease: "bounce.out"
+    let intro = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.background',
+        start: "10 top",
+        end: "+=150",
+        //markers: true
+      },
+      ease: 'power3'
+    });
+
+    intro.from(".h1", {
+      opacity: 0,
+      duration: 1
     })
+
+    intro.from('.p', {
+      opacity: 0,
+      duration: 1
+    })
+
+    intro.from('.p', {
+      width: 1200,
+      duration: 2,
+      ease: 'power3'
+    }, '-=0.5')
+
+    intro.from('.image', {
+      x: 400,
+      opacity:0,
+      duration: 2,
+      ease: 'power3'
+    }, '-=2')
+/* 
+    gsap.from(".p", {
+      scrollTrigger: {
+        trigger: '.background',
+        start: '150 top',
+        end: "+=150",
+        //markers: true
+      },
+      width: 1200,
+      duration: 2,
+      ease: 'power3'
+    })
+
+    gsap.from(".image", {
+      scrollTrigger: {
+        trigger: '.background',
+        start: '150 top',
+        end: "+=150",
+        //markers: true
+      },
+      x: 400,
+      opacity:0,
+      duration: 2,
+      ease: 'power3'
+    })
+
+    */
 
     let tl = gsap.timeline({
       scrollTrigger: {
@@ -52,40 +93,15 @@ function App() {
       }
     })
 
-    let iconTL = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".aboutME",
-        start: "top center",
-        end: "+=100",
-        scrub: true}
-    })
-
     let fontTL = gsap.timeline({
       scrollTrigger: {
         trigger: ".test",
-        start: "bottom center",
+        start: "500 center",
         end: "+=750",
         scrub: true,
-        //markers: true
+        markers: true
       }
     })
-
-    iconTL.to('.TopIconGithub',{
-    opacity: 0,
-  y: 100}
-    )
-    iconTL.to('.TopIconLinkedin',{
-      opacity: 0
- ,   y: 100}
-      )
-      iconTL.to('.TopIconMail',{
-        opacity: 0
-   ,   y: 100}
-        )
-        iconTL.to('.TopIconX',{
-          opacity: 0
-     ,   y: 100}
-          )
 
     tl.to(".aboutME",{
     x: 0});   
@@ -96,89 +112,16 @@ function App() {
       borderBottom: "1px solid #f7df1e" 
         })
 
-    
-        fontTL.to(".react", {
-          color: "#61DBFB",
-          borderBottom: "1px solid #61DBFB" 
-            })
-
-            fontTL.to(".contact", {
-              y: -50
-            })
-
-            fontTL.to(".laboratory", {
-              opacity:100,
-              y:7.5,
-              rotate:90
-             })
-
-            fontTL.to(".boulder", {
-             opacity:100,
-             y:7.5
-            })
+    fontTL.to(".react", {
+        color: "#61DBFB",
+        borderBottom: "1px solid #61DBFB" 
+        })
+    fontTL.to(".boulder", {
+        opacity:100,
+        y:7.5
+        })
 
            
-
-     gsap.from(".image", {
-      scrollTrigger: {
-        trigger: '.aboutME',
-        start: 'top center',
-        end: '+=300',
-        scrub: 1,
-        //markers: true
-      },
-      x: () => - document.querySelector(".aboutME").offsetWidth + 210,
-      y: () => document.querySelector(".aboutME").offsetHeight -290,
-      scale: 0.5
-    })
-
-    gsap.from(".p", {
-      scrollTrigger: {
-        trigger: '.aboutME',
-        start: 'top center',
-        end: '+=300',
-        scrub: 1,
-       // markers: true
-      },
-      x: () => - document.querySelector(".aboutME").offsetWidth / 7.5,
-      y: () => document.querySelector(".aboutME").offsetHeight /4 + 13 ,
-      rotate: 16.6,
-      scale: 0.48
-    })
-
-    gsap.from(".h1", {
-      scrollTrigger: {
-        trigger: '.aboutME',
-        start: 'top center',
-        end: '+=300',
-        scrub: 1,
-       // markers: true
-      },
-      x: () =>  document.querySelector(".aboutME").offsetWidth / 3,
-      y: () => document.querySelector(".aboutME").offsetHeight/1.52,
-      rotate: 11,
-      scale: 1
-    })
-
-    let contactTL = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".contactHolder",
-        start: "-350 center",
-        end: "+=250",
-        scrub: true,
-       // markers: true
-      }
-    })
-
-    contactTL.from(".contactHolder", {
-      opacity: 0
-    })
-
-    contactTL.from(".IconReal", {
-      y: -75,
-      stagger: 0.1
-    })
-    
 
   });
   
@@ -208,10 +151,6 @@ function App() {
           <img src={memoji} alt='memoji'/>  
           
         </div>
-            <Icon id="broken-Mail" className='TopIconMail' inverted color='grey' name='mail' size='big'/>
-            <Icon id="broken-Github" className='TopIconGithub' inverted color='grey' name='github' size='big'/>
-            <Icon id="broken-Linkedin" className='TopIconLinkedin' inverted color='grey' name='linkedin' size='big'/>
-            <Icon id="broken-X" className='TopIconX' inverted color='grey' name='mail' size='big'/>
         </div>
 
       </div>
@@ -220,7 +159,29 @@ function App() {
 
         </div>
 
-        <div id='contact-bar-screen'>
+        
+        <div>
+
+        <Techstack />
+        </div>
+
+
+        <div>
+          <Projects />
+        </div>
+
+        <Contact />
+
+
+     
+    </div>
+  );
+}
+
+export default App;
+
+
+/* <div id='contact-bar-screen'>
 
         <div id='contact-reveal'>
 
@@ -259,20 +220,4 @@ function App() {
           </div>
 
         </div>
-        <div>
-
-        <Techstack />
-        </div>
-
-
-        <div>
-          <Projects />
-        </div>
-
-
-     
-    </div>
-  );
-}
-
-export default App;
+        */

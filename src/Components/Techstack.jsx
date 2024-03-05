@@ -33,7 +33,7 @@ export default function Techstack() {
             start: "top center",
             end: "bottom center",
             scrub:true,
-            markers: true
+            //markers: true
         },
         y: 60,
         opacity: 0
@@ -72,7 +72,7 @@ export default function Techstack() {
                 start: "center center",
                 end: "+=630",
                 scrub: true,
-                markers: true
+                //markers: true
          },
          y: 200,
         opacity:0,

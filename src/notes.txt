@@ -5,3 +5,28 @@
       - White box gains height to reveal itself
       - stagger in images HTML -> GSAP -> CSS ect.
       - fade in language and frameworks txt. 
+
+
+
+
+
+
+Things to do: 
+
+  absolute symbols: 
+    - draw some pngs that can be scattered on the sides of the scren
+    - ideas: 
+      - naruto
+      - some
+      - ratchet & clank 
+      - star wars
+      - pokemon 
+      - chess
+
+  Hover effect on memoji:
+    - on click change image to another random memoji
+    - use motion.div bounce effect (onTap? // whileHover)
+
+  
+  find a use for the forth contact icon. 
+    - phone number? 
