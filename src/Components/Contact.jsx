@@ -33,6 +33,11 @@ export default function Contact() {
         y: -75,
         stagger: 0.1
       })
+
+      contactTL.from(".get-in-touch", {
+        y: 75,
+        opacity: 0
+      })
       
   
     })
@@ -51,6 +56,7 @@ export default function Contact() {
         <div id='contact-bar-screen'>
 
 <div id='contact-reveal'>
+  <div id='get-in-touch' className='get-in-touch'><p>Get in touch!</p></div>
 
 {clipboard ? 
 <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }} onClick={() => {

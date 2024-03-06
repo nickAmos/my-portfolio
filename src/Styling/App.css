@@ -94,6 +94,7 @@ background: linear-gradient(to left, #414345, #232526); /* W3C, IE 10+/ Edge, Fi
 }
 
 #img-container {
+  cursor: pointer;
   width: 200px;
   position: relative;
   height: 200px;
@@ -159,6 +160,26 @@ background: linear-gradient(to left, #414345, #232526); /* W3C, IE 10+/ Edge, Fi
   width: 400px;
   height: 120px;
   position: relative;
+}
+
+#get-in-touch {
+  position: absolute;
+  top: -50px;
+  width: 200px;
+  height: auto;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  left: 100px;
+
+}
+
+#get-in-touch p {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
 }
 
 #contact-icon-holder {

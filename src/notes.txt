@@ -13,8 +13,6 @@
 
 Things to do: 
 
-  scroll to begin animation. 
-
   absolute symbols: 
     - draw some pngs that can be scattered on the sides of the scren
     - ideas: 

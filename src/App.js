@@ -26,27 +26,17 @@ function App() {
   const { scrollYProgress } = useScroll();
   const [profile, setProfile] = useState(memoji);
   const [profileIndex, setProfileIndex] = useState(0);
+  const memojiArr = [memoji, altmemoji1, altmemoji2, altmemoji3, altmemoji4, altmemoji5];
 
   const newProfile = (newIndex) => {
-    if (newIndex === 0) {
-      setProfile(memoji);
-    } else if (newIndex === 1) {
-      setProfile(altmemoji1);
-    } else if (newIndex === 2) {
-      setProfile(altmemoji2);
-    } else if (newIndex === 3) {
-      setProfile(altmemoji3);
-    } else if (newIndex === 4) {
-      setProfile(altmemoji4);
-    } else if (newIndex === 5) {
-      setProfile(altmemoji5);
-    }
+    setProfile(memojiArr[newIndex]);
   }
 
   const randomProfile = (currentIndex) => {
     let num;
     while (true) {
       num = Math.floor(Math.random() * 6);
+      console.log(`num: ${num}`);
       if (num !== currentIndex) {
         setProfileIndex(num);
         newProfile(profileIndex);
@@ -199,11 +189,12 @@ function App() {
          </p>
          
         </div>
-        <div className='image' id='img-container'>
+        <motion.div whileHover={{scale: 1.1,transition: { type: "spring",stiffness: 260,damping: 20 },}}whileTap={{ scale: 0.9 }}
+         onClick={() => randomProfile(profileIndex)} className='image' id='img-container'>
           
           <img src={profile} alt='memoji'/>  
           
-        </div>
+        </motion.div>
         </div>
 
       </div>
