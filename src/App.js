@@ -1,5 +1,10 @@
 import '../src/Styling/App.css';
 import memoji from '../src/memoji.jpg';
+import altmemoji1 from '../src/Images/IMG_5798.jpg';
+import altmemoji2 from '../src/Images/IMG_5800.jpg';
+import altmemoji3 from '../src/Images/IMG_5801.jpg';
+import altmemoji4 from '../src/Images/IMG_5802.jpg';
+import altmemoji5 from '../src/Images/IMG_5803.jpg';
 import { motion, useScroll} from "framer-motion";
 import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
@@ -8,6 +13,7 @@ import Techstack from './Components/Techstack';
 import Projects from './Components/Projects';
 import Contact from './Components/Contact';
 import { Icon } from 'semantic-ui-react';
+import { useState } from 'react';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -16,7 +22,39 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
 
+
   const { scrollYProgress } = useScroll();
+  const [profile, setProfile] = useState(memoji);
+  const [profileIndex, setProfileIndex] = useState(0);
+
+  const newProfile = (newIndex) => {
+    if (newIndex === 0) {
+      setProfile(memoji);
+    } else if (newIndex === 1) {
+      setProfile(altmemoji1);
+    } else if (newIndex === 2) {
+      setProfile(altmemoji2);
+    } else if (newIndex === 3) {
+      setProfile(altmemoji3);
+    } else if (newIndex === 4) {
+      setProfile(altmemoji4);
+    } else if (newIndex === 5) {
+      setProfile(altmemoji5);
+    }
+  }
+
+  const randomProfile = (currentIndex) => {
+    let num;
+    while (true) {
+      num = Math.floor(Math.random() * 6);
+      if (num !== currentIndex) {
+        setProfileIndex(num);
+        newProfile(profileIndex);
+        return;
+      }
+    }
+
+  }
 
   useGSAP(() => {
 
@@ -163,7 +201,7 @@ function App() {
         </div>
         <div className='image' id='img-container'>
           
-          <img src={memoji} alt='memoji'/>  
+          <img src={profile} alt='memoji'/>  
           
         </div>
         </div>
