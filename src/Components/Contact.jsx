@@ -12,6 +12,7 @@ export default function Contact() {
 
     const [clipboard, setClipboard] = useState(false);
     const [copied, setcopied] = useState(false);
+    const [clipcontent, setClipcontent] = useState('nick.amos2000@gmail.com')
 
     useGSAP(() => {
 
@@ -70,24 +71,30 @@ export default function Contact() {
   }, 1250);
 }} id='clipboardContainer'>
   <div id='relative-container'>
-  <div id='square'></div>
   <div id='email-flex'>
-    <p id='email'>nick.amos2000@gmail.com</p>
+    <p id='email'>{clipcontent}</p>
     <div id='copy-outline'><Icon name='copy outline'/></div>
   </div>
   
   </div>
 </motion.div>
  : null}
+ 
  {copied ? <div id='copied-txt'>Copied!</div> : null} 
 
       <div className='contactHolder' id='contact-icon-holder'>
-      <div onClick={() => setClipboard(!clipboard)} id='getMail'>
+      <div onClick={() => {
+        setClipboard(true);
+        setClipcontent('nick.amos2000@gmail.com');
+        }} id='getMail'>
         <Icon className='IconReal Mail' name='mail' size='big'/>
       </div>
         <div><a href='https://github.com/nickAmos?tab=overview&from=2024-02-01&to=2024-02-28' target='_blank'><Icon className='IconReal Github' name='github' size='big'/></a></div>
         <div><a href='https://www.linkedin.com/in/nick-amos-2a2688247/' target='_blank'><Icon className='IconReal Linkedin' name='linkedin' size='big'/></a></div>
-        <div><Icon className='IconReal X' name='mail' size='big'/></div>
+        <div onClick={() => {
+        setClipboard(true);
+        setClipcontent('(+61) 400480350');
+        }}><Icon className='IconReal X' name='phone' size='big'/></div>
       </div>
 
   </div>

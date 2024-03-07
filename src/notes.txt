@@ -13,6 +13,8 @@
 
 Things to do: 
 
+Final Style Feat: 
+
   absolute symbols: 
     - draw some pngs that can be scattered on the sides of the scren
     - ideas: 
@@ -22,10 +24,6 @@ Things to do:
       - star wars
       - pokemon 
       - chess
-
-  Hover effect on memoji:
-    - on click change image to another random memoji
-    - use motion.div bounce effect (onTap? // whileHover)
 
   
   find a use for the forth contact icon. 
