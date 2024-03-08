@@ -276,7 +276,7 @@ export default function Projects() {
                             </div>
                             <div id='source-code'>
                                 <p>Code</p>
-                                <Icon name='code' size='large' />
+                                <a href='https://github.com/nickAmos/The-Cool-Shoe-Store' target='_blank'><Icon name='code' size='large' /></a>
                             </div>
                         </div>  
                     </div> : null}
@@ -306,7 +306,7 @@ export default function Projects() {
                             </div>
                             <div id='source-code'>
                                 <p>Code</p>
-                                <Icon name='code' size='large' />
+                                <a href='https://github.com/nickAmos/test-test-directory' target='_blank'><Icon name='code' size='large' /></a>
                             </div>
                         </div> 
                     </div> : null}
@@ -336,7 +336,7 @@ export default function Projects() {
                             </div>
                             <div id='source-code'>
                                 <p>Code</p>
-                                <Icon name='code' size='large' />
+                                <a href='https://github.com/nickAmos/PokeSreak/tree/main/poke-streak' target='_blank'><Icon name='code' size='large' /></a>
                             </div>
                         </div> 
                     </div> : null}
@@ -366,7 +366,7 @@ export default function Projects() {
                             </div>
                             <div id='source-code'>
                                 <p>Code</p>
-                                <Icon name='code' size='large' />
+                                <a href='https://github.com/nickAmos/Task-Manager' target='_blank'><Icon name='code' size='large' /></a>
                             </div>
                         </div> 
                     </div> : null}
