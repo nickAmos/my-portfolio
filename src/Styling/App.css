@@ -292,7 +292,7 @@ a, a:hover {
   left: 0;
   right: 0;
   height: 10px;
-  background: hotpink;
+  background: #E0115F;
   transform-origin: 0%;
 }
 
@@ -312,6 +312,10 @@ a, a:hover {
 #pinned-skills-screen {
   width: 1200px;
   height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
  
 }
 
@@ -399,5 +403,83 @@ a, a:hover {
 
 #JAVASCRIPT, #REACT, #SEMANTIC {
   border-radius: 7.5px;
+}
+
+#Tech-Project-Spacer {
+  height: 400px;
+}
+
+
+
+@media only screen  and (max-width: 1200px) {
+
+  #test-text p {
+    font-size: 20px;
+ 
+  }
+
+  #test-text {
+    width: 700px;
+  }
+  #test-text h1 {
+    font-size: 34px;
+  }
+
+  #img-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  #AboutME-Container {
+    width: 100%;
+  }
+
+}
+
+@media only screen  and (max-width: 900px) {
+  #AboutME-Container {
+    flex-direction: column;
+  }
+  #map-technologoes {
+    width: 90%;
+  }
+
+  #test-text {
+    width: 500px;
+  }
+
+  #img-container-tech {
+    width: 100px;
+    height: 100px;
+  }
+
+  #absoluteName {
+    width: 100px;
+  }
+
+  #absoluteName p {
+    font-size: 14px;
+  }
+
+}
+
+
+@media only screen  and (max-height: 600px) {
+  #map-technologoes {
+    width: 90%;
+    height: 400px;
+  }
+
+  #Tech-Project-Spacer {
+    height: 800px;
+  }
+}
+
+
+@media only screen  and (max-height: 300px) {
+
+ #Tech-Project-Spacer {
+    height: 1000px;
+  }
 }
 

@@ -26,6 +26,8 @@ function App() {
   const { scrollYProgress } = useScroll();
   const [profile, setProfile] = useState(memoji);
   const [profileIndex, setProfileIndex] = useState(0);
+
+ 
   const memojiArr = [memoji, altmemoji1, altmemoji2, altmemoji3, altmemoji4, altmemoji5];
 
   const newProfile = (newIndex) => {
@@ -89,6 +91,14 @@ function App() {
         trigger: '.background',
         start: "50 top",
         end: "+=150",
+        onEnter: () => {
+          setTimeout(() => {
+            randomProfile(5);
+            
+            console.log('ran')
+          },3000)
+        
+        }
         //markers: true
       },
       ease: 'power3'
@@ -181,7 +191,7 @@ function App() {
 
       <div className='aboutME' id='AboutME-Container'>
         <div className='test' id='test-text'>
-         <h1 className='h1'>Hi, my name is Nick !</h1>
+         <h1 className='h1'>Hi, my name is <span>Nick</span> !</h1>
          <p className='p'>I'm a <span className='javaScript'>JavaScript</span> / <span className='react'>React</span> developer who enjoys making interactive sites for the web.
           I began my coding journey in October 2022 with Codecademy's frontend-engineer course. 
            Currently, I work as a laboratory assistant in a pathology laboratory and for fun I enjoy <span id='boulder-txt'>bouldering <span id='boulder-emoji' className='boulder'>🧗‍♂️</span></span> 
@@ -195,7 +205,7 @@ function App() {
           <img src={profile} alt='memoji'/>  
           
         </motion.div>
-        </div>
+      </div>
 
       </div>
       
@@ -208,6 +218,8 @@ function App() {
 
         <Techstack />
         </div>
+
+        <div id='Tech-Project-Spacer'></div>
 
 
         <div>

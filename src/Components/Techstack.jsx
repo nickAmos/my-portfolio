@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react"
 import { useState } from "react";
 import { gsap } from "gsap";
-import { motion, useScroll} from "framer-motion";
+import { motion} from "framer-motion";
 import HTML from '../Images/HTML.png';
 import CSS from '../Images/CSS3.png';
 import BOOTSTRAP from '../Images/axios.png';

@@ -1,29 +1,14 @@
 
-  
-  30th agenda :
-    Create animation timeline for tech stack section: 
-      - White box gains height to reveal itself
-      - stagger in images HTML -> GSAP -> CSS ect.
-      - fade in language and frameworks txt. 
-
-
-
-
-
 
 Things to do: 
 
-Final Style Feat: 
+  interactive:
+    animate the 'interactive' in about me to provoke a function that changes the memoji.
 
-  absolute symbols: 
-    - draw some pngs that can be scattered on the sides of the scren
-    - ideas: 
-      - naruto
-      - some
-      - ratchet & clank 
-      - star wars
-      - pokemon 
-      - chess
+    - add an animation the syncs with first change 
+    - momentary increase in height + rotation.
+    - bounce effect?? into screen with ease.  
+
 
   
   find a use for the forth contact icon. 
