@@ -1,4 +1,5 @@
 {
+  "homepage": "http://nickAmos.github.io/my-portfolio",
   "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
@@ -11,11 +12,12 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "semantic-ui-css": "^2.5.0",
-    "semantic-ui-react": "^2.1.5",
-    "web-vitals": "^2.1.4"
+    "semantic-ui-react": "^2.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -37,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }

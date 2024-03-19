@@ -68,7 +68,7 @@ export default function Projects() {
                 start: "center bottom",
                 end: "+=200",
                 scrub: true,
-                markers: true
+ 
             },
             y: 60,
         opacity: 0
@@ -269,9 +269,11 @@ export default function Projects() {
                     </div>
                         <div id='navigation-container'>
                             <div id='project-img-container'>
-                                <div id='overlay'>
-                                   <p>View Site</p>
-                                </div>
+                                <a href='http://nickAmos.github.io/The-Cool-Shoe-Store' target='_blank'>
+                                    <div id='overlay'>
+                                     <p>View Site</p>
+                                    </div>
+                                </a>
                                 <img src={shoeStore}/>
                             </div>
                             <div id='source-code'>
@@ -299,9 +301,11 @@ export default function Projects() {
                         </div>
                         <div id='navigation-container'>
                             <div id='project-img-container'>
+                            <a href='http://nickAmos.github.io/test-test-directory' target='_blank'>
                                 <div id='overlay'>
                                    <p>View Site</p>
                                 </div>
+                            </a>
                                 <img src={testDirectory}/>
                             </div>
                             <div id='source-code'>
@@ -329,14 +333,16 @@ export default function Projects() {
                         </div>
                         <div id='navigation-container'>
                             <div id='project-img-container'>
+                            <a href='http://nickAmos.github.io/PokeSreak' target='_blank'>
                                 <div id='overlay'>
                                    <p>View Site</p>
                                 </div>
+                            </a>
                                 <img src={pokeStreak}/>
                             </div>
                             <div id='source-code'>
                                 <p>Code</p>
-                                <a href='https://github.com/nickAmos/PokeSreak/tree/main/poke-streak' target='_blank'><Icon name='code' size='large' /></a>
+                                <a href='https://github.com/nickAmos/PokeSreak' target='_blank'><Icon name='code' size='large' /></a>
                             </div>
                         </div> 
                     </div> : null}
@@ -359,9 +365,11 @@ export default function Projects() {
                         </div>
                         <div id='navigation-container'>
                             <div id='project-img-container'>
+                            <a href='http://nickAmos.github.io/Task-Manager' target='_blank'>
                                 <div id='overlay'>
                                    <p>View Site</p>
                                 </div>
+                            </a>
                                 <img src={taskManager}/>
                             </div>
                             <div id='source-code'>

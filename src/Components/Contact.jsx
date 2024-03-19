@@ -22,7 +22,7 @@ export default function Contact() {
           start: "-350 center",
           end: "+=250",
           scrub: true,
-         // markers: true
+
         }
       })
   
@@ -68,12 +68,14 @@ export default function Contact() {
   },250);
   setTimeout(() => {
     setcopied(false);
-  }, 1250);
+  }, 2000);
 }} id='clipboardContainer'>
   <div id='relative-container'>
   <div id='email-flex'>
     <p id='email'>{clipcontent}</p>
-    <div id='copy-outline'><Icon name='copy outline'/></div>
+    <div id='copy-outline'>
+      <Icon name='copy outline'/>
+      </div>
   </div>
   
   </div>
@@ -84,7 +86,7 @@ export default function Contact() {
 
       <div className='contactHolder' id='contact-icon-holder'>
       <div onClick={() => {
-        setClipboard(true);
+        setClipboard(!clipboard);
         setClipcontent('nick.amos2000@gmail.com');
         }} id='getMail'>
         <Icon className='IconReal Mail' name='mail' size='big'/>
@@ -92,9 +94,10 @@ export default function Contact() {
         <div><a href='https://github.com/nickAmos?tab=overview&from=2024-02-01&to=2024-02-28' target='_blank'><Icon className='IconReal Github' name='github' size='big'/></a></div>
         <div><a href='https://www.linkedin.com/in/nick-amos-2a2688247/' target='_blank'><Icon className='IconReal Linkedin' name='linkedin' size='big'/></a></div>
         <div onClick={() => {
-        setClipboard(true);
+        setClipboard(!clipboard);
         setClipcontent('(+61) 400480350');
-        }}><Icon className='IconReal X' name='phone' size='big'/></div>
+        
+        }}id='getPhone'><Icon className='IconReal X' name='phone' size='big'/></div>
       </div>
 
   </div>
